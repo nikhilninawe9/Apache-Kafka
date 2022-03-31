@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,5 +29,12 @@ public class KafkaController {
 		quote.setDateTime(new Date());
 		producerService.sendData(quote);
 		return ResponseEntity.ok("Data is sent!..");
+	}
+
+	/* View data */
+	@GetMapping("/all")
+	public ResponseEntity<List<StockQuote>> fetchData() {
+		List<StockQuote> list = store.fetchAll();
+		return ResponseEntity.ok(list);
 	}
 }
