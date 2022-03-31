@@ -13,16 +13,16 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "stock-quote")
+@Table(name = "stock_quote")
 public class StockQuote {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "stock-id")
+	@Column(name = "stock_id")
 	private Long id;
-	@Column(name = "stock-code")
+	@Column(name = "stock_code")
 	private String code;
-	@Column(name = "unit-price")
+	@Column(name = "unit_price")
 	private Double unitPrice;
-	@Column(name = "date-time")
+	@Column(name = "date_time")
 	private Date dateTime;
 }
